@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
 const envSchema = z.object({
-  WHOP_PASS_MEMBER_STARTER_ID: z.string().min(1, 'WHOP_PASS_MEMBER_STARTER_ID is required'),
-  WHOP_PASS_MEMBER_PRO_ID: z.string().min(1, 'WHOP_PASS_MEMBER_PRO_ID is required'),
-  WHOP_PASS_CREATOR_PRO_ID: z.string().min(1, 'WHOP_PASS_CREATOR_PRO_ID is required'),
-  WHOP_PASS_ENTERPRISE_ID: z.string().min(1, 'WHOP_PASS_ENTERPRISE_ID is required'),
+  WHOP_PASS_MEMBER_STARTER_ID: z.string().min(1, 'WHOP_PASS_MEMBER_STARTER_ID is required').optional(),
+  WHOP_PASS_MEMBER_PRO_ID: z.string().min(1, 'WHOP_PASS_MEMBER_PRO_ID is required').optional(),
+  WHOP_PASS_CREATOR_PRO_ID: z.string().min(1, 'WHOP_PASS_CREATOR_PRO_ID is required').optional(),
+  WHOP_PASS_ENTERPRISE_ID: z.string().min(1, 'WHOP_PASS_ENTERPRISE_ID is required').optional(),
   WHOP_APP_SECRET: z.string().optional(),
 });
 

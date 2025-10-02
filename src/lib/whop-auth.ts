@@ -28,6 +28,12 @@ interface WhopMeResponse {
 }
 
 export function mapAccessToPlan(accessIds: Set<string>): { role: Role; plan: Plan } {
+  // Check if environment variables are configured
+  if (!env.WHOP_PASS_ENTERPRISE_ID || !env.WHOP_PASS_CREATOR_PRO_ID || 
+      !env.WHOP_PASS_MEMBER_PRO_ID || !env.WHOP_PASS_MEMBER_STARTER_ID) {
+    throw new Error('Whop pass IDs not configured. Please set environment variables on Vercel.');
+  }
+
   // Priority order: enterprise > creator_pro > member_pro > member_starter
   if (accessIds.has(env.WHOP_PASS_ENTERPRISE_ID)) {
     return { role: 'creator', plan: 'enterprise' };
