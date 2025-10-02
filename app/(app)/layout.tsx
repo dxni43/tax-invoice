@@ -9,7 +9,7 @@ interface AppLayoutProps {
 
 export default async function AppLayout({ children }: AppLayoutProps) {
   try {
-    const headersList = headers();
+    const headersList = await headers();
     const whopContext = await requireWhopContext(headersList);
 
     return (
