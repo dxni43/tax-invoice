@@ -138,7 +138,7 @@ export default function InvoicePage() {
 
   const handlePrint = useReactToPrint({
     documentTitle: `Invoice-${params.id}`,
-    content: () => componentRef.current,
+    contentRef: componentRef,
   });
 
   const handleSendInvoice = async () => {
