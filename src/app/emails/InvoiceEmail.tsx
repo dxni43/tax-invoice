@@ -42,16 +42,16 @@ export default function InvoiceEmail({
   return (
     <Html>
       <Head />
-      <Preview>Invoice INV0{invoiceID} from {issuerName}</Preview>
+      <Preview>Invoice INV0{String(invoiceID)} from {issuerName}</Preview>
       <Body style={{ backgroundColor: "#ffffff", fontFamily: "Inter, Arial" }}>
         <Container style={{ padding: "24px" }}>
           <Section>
             <Heading as="h2" style={{ color: "#2563EB", margin: 0 }}>
               Purchase Invoice from {issuerName}
             </Heading>
-            <Text style={{ margin: "8px 0", opacity: 0.8 }}>
-              Invoice No: INV0{invoiceID}
-            </Text>
+                <Text style={{ margin: "8px 0", opacity: 0.8 }}>
+                  Invoice No: INV0{String(invoiceID)}
+                </Text>
             <Heading as="h3" style={{ marginTop: 24, marginBottom: 6 }}>Payment Details</Heading>
             <Text style={{ margin: "2px 0" }}>Account Name: {issuerName}</Text>
             <Text style={{ margin: "2px 0" }}>Account Number: {accountNumber}</Text>
