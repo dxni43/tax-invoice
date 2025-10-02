@@ -3,6 +3,9 @@ import { requireWhopContext } from '@/src/lib/whop-auth';
 import { WhopProvider } from '@/src/components/whop-provider';
 import AccessRequired, { OpenInWhopRequired } from '@/src/components/access-required';
 
+// Force dynamic rendering for routes using headers()
+export const dynamic = 'force-dynamic';
+
 interface AppLayoutProps {
   children: React.ReactNode;
 }
@@ -39,12 +42,12 @@ export default async function AppLayout({ children }: AppLayoutProps) {
           <p className="text-gray-600 mb-4">
             We could not verify your plan. Please reload or open this app via Whop.
           </p>
-          <button
-            onClick={() => window.location.reload()}
-            className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+          <a
+            href="."
+            className="inline-block bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
           >
             Reload
-          </button>
+          </a>
         </div>
       </div>
     );
