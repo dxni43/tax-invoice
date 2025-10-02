@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: process.env.EMAIL_FROM,            // -> "Tax & Invoice <no-reply@taxandinvoice.com>"
       to: [body.customerEmail],                // Empfänger
-      reply_to: replyTo,                       // Antworten an Support
+      replyTo: replyTo,                        // Antworten an Support
       subject: body.title || `Invoice INV0${body.invoiceID}`,
       // React Email Komponente:
       react: InvoiceEmail({
