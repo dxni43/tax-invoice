@@ -7,13 +7,17 @@
 		"dev": "whop-proxy --command=\"next dev --turbopack\"",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"migrate": "drizzle-kit generate",
+		"db-create": "drizzle-kit push"
 	},
 	"dependencies": {
 		"@vercel/functions": "^2.0.3",
 		"@whop/api": "^0.0.50",
 		"@whop/react": "0.2.36",
+		"drizzle-orm": "^0.44.6",
 		"next": "15.3.2",
+		"pg": "^8.16.3",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"zod": "^4.1.11"
@@ -25,7 +29,9 @@
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"@whop-apps/dev-proxy": "0.0.1-canary.116",
+		"dotenv": "^17.2.3",
 		"dotenv-cli": "^8.0.0",
+		"drizzle-kit": "^0.31.5",
 		"tailwindcss": "^4",
 		"typescript": "^5"
 	},
